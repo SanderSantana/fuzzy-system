@@ -1,8 +1,8 @@
-public class Main{
+public class Main {
 
     public static void main(String[]args) {
 
-        int[] marks = {20, 57, 6, 37, 73, 89, 23, 51, 17, 8, 27};
+        int [] marks= {20, 57, 6, 37, 73, 89, 23, 51,17,8,27};
 
         mergeSort(marks);
 
@@ -16,26 +16,26 @@ public class Main{
 
     private static void mergeSort(int[] marks) {
 
-        int marksLength = marks.length;
+        int arraySize = marks.length;
 
-        if (marksLength < 2) {
+        if (arraySize < 2) {
 
             return;
 
         }
 
-        int mid = marksLength / 2;
+        int mid = arraySize / 2;
 
         int[] leftHalf = new int[mid];
-        int[] rightHalf = new int[marksLength - mid];
+        int[] rightHalf = new int[arraySize - mid];
 
-        for( int i = 0; i < mid; i++) {
+        for (int i = 0; i < mid; i++) {
 
             leftHalf[i] = marks[i];
 
         }
 
-        for (int i = mid; i < marksLength; i++) {
+        for( int i = mid; i < arraySize; i++) {
 
             rightHalf[i - mid] = marks[i];
 
@@ -48,18 +48,18 @@ public class Main{
 
     }
 
+
     private static void merge(int[] marks, int[] leftHalf, int[] rightHalf) {
 
         int leftSize = leftHalf.length;
         int rightSize = rightHalf.length;
 
-        int i = 0;
-        int j = 0;
-        int k = 0;
+        int i = 0 , j = 0 , k = 0;
 
-        while (i < leftSize && j < rightSize) {
+        while (leftSize > i && rightSize > j) {
 
-            if (leftHalf[i] <= rightHalf[j]) {
+
+            if(leftHalf[i] <= rightHalf[j]) {
 
                 marks[k] = leftHalf[i];
                 i++;
@@ -77,7 +77,7 @@ public class Main{
 
         }
 
-        while ( i < leftSize) {
+        while (i < leftSize) {
 
             marks[k] = leftHalf[i];
             i++;
@@ -94,5 +94,8 @@ public class Main{
         }
 
     }
+
+
+
 
 }
